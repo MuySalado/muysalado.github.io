@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Booru Slideshow</title>
+		<link rel="stylesheet" type="text/css" href="css/slideshow.css">
+	</head>
+	
+	<body>
+		<p id="warning-message"></p>
+		<p id="info-message"></p>
+		<div id="slide-wrapper">
+			<img id="current-image" />
+			<video id="current-video" autoplay='true' loop='true' muted='true' controls>
+				<source type="video/webm"></source>
+			</video>
+			<img id="loading-animation" src="img/loading.gif" alt="Loading Slide" />
+		</div>
+		<div id="indentation">
+			<div id="navigation">
+				<span id="current-slide-number"></span> of <span id="total-slide-number"></span><br>
+				<button class="nav-button" id="first-button">&lt;&lt;</button>
+				<button class="nav-button" id="previous-button">&lt;</button>
+				<button class="nav-button" id="play-button">&#9658;</button>
+				<button class="nav-button" id="pause-button">&#9646;&#9646;</button>
+				<button class="nav-button" id="next-button">&gt;</button>
+				<button class="nav-button" id="last-button">&gt;&gt;</button>
+			</div>
+			<div id="thumbnail-list-wrapper">
+				<div id="thumbnail-list">
+				</div>
+			</div>
+			<div id="search">
+				<input id="search-text" /><br>
+				<button id="search-button">Search</button>
+			</div>
+			<div id="module-container">
+				<div id="sites-to-search">
+					<h4>Sites to Search</h4>
+					<ul>
+						<li><label><input type="checkbox" name="sites-to-search" value="DANB" />danbooru.donmai.us</label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="DERP" />derpibooru.org<br><span>(login for less filtering)</span></label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="E621" />e621.net</label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="GELB" />gelbooru.com<br><span>(need to be logged in)</span></label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="IBSE" />ibsearch.xxx</label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="KONA" />konachan.com</label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="RULE" />rule34.xxx</label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="SAFE" />safebooru.org</label></li>
+						<li><label><input type="checkbox" name="sites-to-search" value="YAND" />yande.re</label></li>
+					</ul>
+				</div>
+				<div id="options">
+					<h4>Options</h4>
+					<ul>
+						<li>
+							Seconds per Slide
+							<br>
+							<input id="seconds-per-slide" type="number" min="1" />
+						</li>
+						<li>
+							Max. Width
+							<br>
+							<input id="max-width" type="number" min="1" /><br>
+						</li>
+						<li>
+							Max. Height
+							<br>
+							<input id="max-height" type="number" min="1" />
+						</li>
+						<li>
+							<label><input id="auto-fit-slide" type="checkbox" />Auto-Fit Slide</label>
+						</li>
+						<li>
+							<label><input id="include-webm" type="checkbox" />Include WEBM</label>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="tips">
+				<h4>Hotkeys</h4>
+				<ul>
+					<li>Full-screen (F11)</li>
+					<li>Previous (&larr; or A)</li>
+					<li>Next (&rarr; or A)</li>
+					<li>Back 10 (W)</li>
+					<li>Forward 10 (S)</li>
+					<li>Play/pause (Enter or space)</li>
+					<li><i>Issues or suggestions: chirmayanashaar@gmail.com</i></li>
+				</ul>
+				</div>
+            </div>
+        </div>
+		
+		<script src="js/objects/sites_manager.js"></script>
+		<script src="js/objects/site_manager.js"></script>
+		<script src="js/objects/slide.js"></script>
+		<script src="js/objects/event.js"></script>
+		<script src="js/mvc/slideshow_model.js"></script>
+		<script src="js/mvc/slideshow_view.js"></script>
+		<script src="js/mvc/slideshow_controller.js"></script>
+		<script src="js/slideshow_initialize.js"></script>
+	</body>
+</html>
+
